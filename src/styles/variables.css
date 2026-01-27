@@ -1,0 +1,36 @@
+:root {
+  --green-primary: #4ADE80;
+  --green-dark: #22C55E;
+  --green-candle: #16A34A;
+  --green-glow: rgba(74, 222, 128, 0.5);
+  --white: #FFFFFF;
+  --black: #000000;
+  --bg-dark: #0A0A0A;
+  --bg-card: #111111;
+  --bg-card-hover: #1a1a1a;
+  --text-muted: #888888;
+  --gold: #FFD700;
+  --red: #EF4444;
+
+  --font-display: 'Bangers', cursive;
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-body: system-ui, -apple-system, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-dark);
+  color: var(--white);
+  min-height: 100vh;
+  overflow-x: hidden;
+}

@@ -1,0 +1,238 @@
+.splits-section {
+  padding-top: 2rem;
+}
+
+.splits-container {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #1a1a2e;
+  border: 2px solid #333;
+  border-radius: 4px;
+  overflow: hidden;
+  font-family: var(--font-mono);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.splits-header {
+  background: #2a2a4a;
+  padding: 0.75rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #333;
+}
+
+/* Progress Bar */
+.split-progress-container {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #333;
+  background: #1a1a2e;
+}
+
+.split-progress-bar {
+  height: 8px;
+  background: #1a1a1a;
+  border-radius: 4px;
+  overflow: visible;
+  position: relative;
+}
+
+.split-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--green-dark), var(--green-primary));
+  border-radius: 4px;
+  transition: width 0.5s ease-out;
+  position: relative;
+}
+
+.split-progress-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    transparent 100%
+  );
+  animation: progress-shimmer 2s ease-in-out infinite;
+}
+
+@keyframes progress-shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(200%); }
+}
+
+.split-progress-glow {
+  position: absolute;
+  top: 50%;
+  width: 12px;
+  height: 12px;
+  background: var(--green-primary);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 10px var(--green-glow), 0 0 20px var(--green-glow);
+  transition: left 0.5s ease-out;
+}
+
+.split-progress-label {
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-align: right;
+}
+
+.splits-game {
+  color: var(--green-primary);
+  font-weight: 700;
+}
+
+.splits-category {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.splits-table {
+  padding: 0;
+}
+
+.splits-row {
+  display: grid;
+  grid-template-columns: 1fr 100px 100px;
+  padding: 0.6rem 1rem;
+  border-bottom: 1px solid #222;
+  transition: background 0.2s ease;
+}
+
+.splits-row:last-child {
+  border-bottom: none;
+}
+
+.splits-row.header-row {
+  background: #222;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.splits-row.achieved {
+  background: rgba(74, 222, 128, 0.1);
+}
+
+.splits-row.current-split {
+  border-left: 3px solid var(--green-primary);
+  animation: current-pulse 2s ease-in-out infinite;
+}
+
+@keyframes current-pulse {
+  0%, 100% {
+    border-left-color: var(--green-primary);
+    background: transparent;
+  }
+  50% {
+    border-left-color: var(--green-glow);
+    background: rgba(74, 222, 128, 0.05);
+  }
+}
+
+.split-name {
+  color: var(--white);
+}
+
+.split-time {
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.splits-row.achieved .split-time {
+  color: var(--green-primary);
+}
+
+.split-delta {
+  text-align: right;
+  font-weight: 700;
+}
+
+.split-delta.gold {
+  color: var(--gold);
+  text-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+}
+
+.split-delta.wr-pace {
+  color: #00ff00;
+  animation: wr-flash 1s ease-in-out infinite;
+}
+
+@keyframes wr-flash {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.split-delta.ahead {
+  color: var(--green-primary);
+}
+
+.split-delta.current {
+  color: var(--white);
+}
+
+.splits-footer {
+  background: #222;
+  padding: 0.75rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+}
+
+.wr-label, .pb-label {
+  color: var(--text-muted);
+  margin-right: 0.5rem;
+}
+
+.wr-value {
+  color: var(--gold);
+}
+
+.pb-value {
+  color: var(--green-primary);
+}
+
+.splits-meme {
+  text-align: center;
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: var(--bg-card);
+  border-radius: 8px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.splits-meme p {
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+.splits-meme .verified {
+  color: var(--green-primary);
+  font-style: normal;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 768px) {
+  .splits-row {
+    grid-template-columns: 1fr 80px 80px;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  .splits-header {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+}
