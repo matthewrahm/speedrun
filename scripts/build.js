@@ -14,11 +14,9 @@ const projectRoot = join(__dirname, '..');
 async function fetchTimestamp() {
   const tokenAddress = process.env.VITE_TOKEN_ADDRESS;
 
-  // Temporary: allow build without token address using fallback
   if (!tokenAddress) {
-    const fallback = process.env.VITE_LAUNCH_TIMESTAMP || '1706300400000';
-    console.warn('Warning: VITE_TOKEN_ADDRESS not set, using fallback timestamp');
-    return fallback;
+    console.error('Error: VITE_TOKEN_ADDRESS environment variable is not set');
+    process.exit(1);
   }
 
   const url = `https://api.dexscreener.com/latest/dex/tokens/${tokenAddress}`;
