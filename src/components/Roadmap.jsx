@@ -32,7 +32,7 @@ function Roadmap() {
       status: 'upcoming',
       items: [
         'CEX listing',
-        '$SPEED merch store',
+        '$SPEEDRUN merch store',
         'Speedrunning events',
         'Major partnerships',
       ],

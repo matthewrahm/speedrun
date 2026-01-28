@@ -8,7 +8,7 @@ function Footer() {
     <footer className="footer">
       <div className="footer-content">
         <div className="footer-logo">
-          <span className="footer-speed">$SPEED</span>
+          <span className="footer-speed">$SPEEDRUN</span>
           <span className="footer-tagline">Speedrunning to 100M</span>
         </div>
 
@@ -36,7 +36,7 @@ function Footer() {
 
         <div className="footer-disclaimer">
           <p>NFA / DYOR</p>
-          <p>$SPEED is a memecoin with no intrinsic value or expectation of financial return.</p>
+          <p>$SPEEDRUN is a memecoin with no intrinsic value or expectation of financial return.</p>
           <p>This is not financial advice. Trade at your own risk.</p>
         </div>
 

@@ -35,10 +35,10 @@ function Hero() {
   return (
     <section className="hero">
       <div className="hero-content">
-        <img src="/logo.jpeg" alt="$SPEED Logo" className="hero-logo" />
+        <img src="/logo.jpeg" alt="$SPEEDRUN Logo" className="hero-logo" />
 
         <h1 className="hero-title">
-          <span className="speed-text">$SPEED</span>
+          <span className="speed-text">$SPEEDRUN</span>
         </h1>
 
         <p className="hero-tagline">Speedrunning to 100M Market Cap</p>
@@ -63,7 +63,7 @@ function Hero() {
         </div>
 
         <a href={jupiterUrl} target="_blank" rel="noopener noreferrer" className="buy-button neon-sweep">
-          BUY $SPEED
+          BUY $SPEEDRUN
         </a>
       </div>
 

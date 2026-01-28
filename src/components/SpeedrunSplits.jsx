@@ -114,7 +114,7 @@ function SpeedrunSplits() {
 
       <div className={`splits-container scroll-fade-in ${isVisible ? 'visible' : ''}`}>
         <div className="splits-header">
-          <span className="splits-game">$SPEED Any% Glitchless</span>
+          <span className="splits-game">$SPEEDRUN Any% Glitchless</span>
           <span className="splits-category">Current Attempt</span>
         </div>
 
