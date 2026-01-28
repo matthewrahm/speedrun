@@ -4,12 +4,33 @@
  */
 
 import { spawn } from 'child_process';
+import { readFileSync } from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const projectRoot = join(__dirname, '..');
+
+// Load .env file since Node doesn't do this automatically
+try {
+  const envFile = readFileSync(join(projectRoot, '.env'), 'utf-8');
+  for (const line of envFile.split('\n')) {
+    const trimmed = line.trim();
+    if (trimmed && !trimmed.startsWith('#')) {
+      const eqIndex = trimmed.indexOf('=');
+      if (eqIndex !== -1) {
+        const key = trimmed.slice(0, eqIndex);
+        const value = trimmed.slice(eqIndex + 1);
+        if (!process.env[key]) {
+          process.env[key] = value;
+        }
+      }
+    }
+  }
+} catch {
+  // .env file not found, rely on environment variables
+}
 
 async function fetchTimestamp() {
   const tokenAddress = process.env.VITE_TOKEN_ADDRESS;
